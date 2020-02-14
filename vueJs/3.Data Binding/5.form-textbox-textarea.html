@@ -4,21 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belajar Array v-for</title>
+    <title>form-texbox-textarea</title>
 </head>
 
 <body>
-    <div id="apps">
-        <ul>
-            <li v-for="kdr in kendaraan">Nama Kendaraan : {{kdr}}</li>
-        </ul>
-    </div>
+    <div id="apps"></div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
     <script>
-        var app = new Vue({
+        let app = new Vue({
             el: "#apps",
             data: {
-                kendaraan: ["mobil", "motor", "sepeda", "becak"]
+
             }
         })
     </script>

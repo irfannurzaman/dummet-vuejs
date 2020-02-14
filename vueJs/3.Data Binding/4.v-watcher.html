@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar V-Watcher</title>
+</head>
+
+<body>
+    <div id="apps">
+        <input type="password" placeholder="type password" v-model="isi1">
+        <input type="password" placeholder="type password" v-model="isi2">
+        <p v-html="keterangan"></p>
+        <input v-html="submit" value="signUp" v-if="tampil">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: "#apps",
+            data: {
+                isi1: "",
+                isi2: "",
+                keterangan: "",
+                tampil: false
+            },
+            watch: {
+                isi2: 'ketik'
+            },
+            methods: {
+                ketik: function () {
+                    if (this.isi2 == this.isi1) {
+                        this.keterangan = '<i>Password sama, silakan lanjutkan';
+                        this.tampil = true
+                    } else {
+                        this.keterangan = '<i> Password tidak sama <i>'
+                        this.tampil = false
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

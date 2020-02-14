@@ -4,21 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belajar Array v-for</title>
+    <title>v-if</title>
 </head>
 
 <body>
-    <div id="apps">
-        <ul>
-            <li v-for="kdr in kendaraan">Nama Kendaraan : {{kdr}}</li>
-        </ul>
+    <div id='apps'>
+        <h1 v-if='tampil'>{{pesan1}}</h1>
+        <h1 v-else if='tampil'>{{pesan2}}</h1>
+        <!-- <h1 v-show='tampil == true'>{{pesan}}</h1> -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
     <script>
         var app = new Vue({
-            el: "#apps",
+            el: '#apps',
             data: {
-                kendaraan: ["mobil", "motor", "sepeda", "becak"]
+                tampil: false,
+                pesan1: "Belajar Conditional",
+                pesan2: "Belajar else Conditional",
             }
         })
     </script>

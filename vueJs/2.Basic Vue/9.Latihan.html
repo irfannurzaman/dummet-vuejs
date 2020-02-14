@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latihan</title>
 </head>
+
 <body>
     <div id='apps'>
         <h2>Vue.js</h2>
         <p>The Progressive <br>
-        JavaScript Framework</p>
+            JavaScript Framework</p>
 
         <h1 class='size-lg'>{{nilai}}</h1>
-        <p>Counter Bilangan {{hasil}}</p>
-        <button @click = "tombol(1)">+</button>
-        <button @click = "tombol(2)">-</button>
+        <p>Counter Bilangan {{nilai % 2 == 0 ? "genap" : "ganjil" }}</p>
+        <button @click="tombol('plus')" :disabled="nilai === 5">+</button>
+        <button @click="tombol('minus')">-</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
     <script>
-        var app = new Vue ({
-            el : '#apps',
-            data : {
-                nilai : 0,
-                hasil : ''
+        var app = new Vue({
+            el: '#apps',
+            data: {
+                nilai: 0,
+                hasil: ''
             },
-            methods : {
-                tombol : function(value){
-                    if(value == "1")
-                    return this.nilai += 1
-                    else(value == "2")
-                    return this.nilai -= 1
-            }
+            methods: {
+                tombol: function (value) {
+                    if (value == "plus") {
+                        return this.nilai += 1
+                    } else if (value == "minus") {
+                        if (this.nilai > 0) {
+                            return this.nilai -= 1
+                        }
+                    } else {
+                        console.log("err");
+
+                    }
+                }
             }
         })
     </script>
 </body>
+
 </html>
