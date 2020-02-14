@@ -4,24 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eksplorasi Computed</title>
+    <title>Latihan</title>
 </head>
 
 <body>
     <div id="apps">
-        <h3>Hasil dari perhitungan bilangan {{a}} dan {{b}}</h3>
-        Penjumlahan : {{jumlah}} <br>
-        kurang : {{kurang}} <br>
-        kali : {{kali}} <br>
-        pembagian : {{bagi}} <br>
+        The Progressive <br>
+        JavaScript Fremwork
+
+        <li v-for="i in ceklis">{{i}}</li>
+        <button @click="tombol(1)">Prev</button> {{nomer}} of 5 <button @click="tombol(2)">Next</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
     <script>
         let app = new Vue({
             el: "#apps",
             data: {
-                a: 3,
-                b: 5
+                data: '',
+                ceklis: [1]
+            },
+            methods: {
+                tombol: function (value) {
+
+                }
             }
         })
     </script>
