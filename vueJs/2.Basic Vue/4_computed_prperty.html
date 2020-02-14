@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar computed property</title>
+</head>
+<body>
+    <div id="apps">{{hasil}}</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script>
+
+    var app = new Vue ({
+            el: "#apps",
+            data : {
+                 bil1 : 5,
+                 bil2 : 2,
+        },
+
+          computed : {
+            hasil() {
+                return this.bil1 + this.bil2
+            }
+          }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar event hendler</title>
+</head>
+<body>
+    <div id="apps">
+        <button @click=" pesan='Belajar menggunakan event click'">tombol</button>
+        <h3>{{pesan}}</h3>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script>
+var app = new Vue ({
+    el : "#apps",
+    data : {
+        pesan : ""
+    }
+})
+    </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar event hendler</title>
+</head>
+<body>
+    <div id="apps">
+        <button @click="pesan">tombol</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script>
+var app = new Vue ({
+    el : "#apps",
+        methods : {
+            pesan : function() {
+                alert("Belajar menggunaan event click")
+            }
+        }
+})
+    </script>
+</body>
+</html>

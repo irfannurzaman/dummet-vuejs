@@ -1,0 +1,128 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar filters</title>
+</head>
+<body>
+    <div id="apps">
+        <h3>Normal</h3>
+        <p>{{pesan}}</p>
+
+        <h3>Huruf Kapital (UpperCase</h3>
+        <p>{{pesan | kapital}}</p>
+
+        <h3>Huruf Kecil (LowerCase</h3>
+        <p>{{pesan | kecil}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script>
+var app = new Vue ({
+    el : "#apps",
+    data: {
+pesan : 'Belajar Vue'
+    },
+
+    filters: {
+        kapital(value){
+            if(!value) return ""
+            value = value.toString()
+            return value.toUpperCase()
+        },
+        kecil(value){
+            if(!value) return ""
+            value = value.toString()
+            return value.toLowerCase()
+        }
+    }
+})
+    </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar filters</title>
+</head>
+<body>
+    <div id="apps">
+        <h3>Normal</h3>
+        <p>{{pesan}}</p>
+
+        <h3>jika huruf dibalik</h3>
+        <p>{{pesan | capt}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script>
+var app = new Vue ({
+    el : "#apps",
+    data: {
+        pesan: "belajar vue"
+    },
+
+    filters: {
+        capt: function(value){
+            if(!value) return ''
+                value = value.toString()
+            return value.charAt(0).toUpperCase() + value.slice(1)
+        }
+    }
+
+})
+    </script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar filters</title>
+</head>
+<body>
+    <div id="apps">
+        <h3>Normal</h3>
+        <p>{{pesan}}</p>
+
+        <h3>jika huruf dibalik</h3>
+        <p>{{pesan | huruf}}</p>
+
+        <h3>Jika katanya dibalik</h3>
+        <p>{{pesan | kata}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script>
+var app = new Vue ({
+    el : "#apps",
+    data: {
+        pesan: "Belajar Vue"
+    },
+
+    filters: {
+        huruf(value){
+            if(!value) return ''
+                value = value.toString()
+            return value.split('').reverse().join('')
+        },
+        kata(value){
+            if(!value) return ''
+                value = value.toString()
+            return value.split(' ').reverse().join(' ')
+        }
+    }
+
+})
+    </script>
+</body>
+</html> -->
+
+
