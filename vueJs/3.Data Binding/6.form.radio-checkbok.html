@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM RADIO-CHECKBOX</title>
+</head>
+
+<body>
+    <div id="apps">
+        <!-- radio -->
+        <!-- <h3>Pilih Anda</h3>
+        <input type="radio" v-model="pilih" value="S2"> S2 <br>
+        <input type="radio" v-model="pilih" value="Menikah"> Menikah <br>
+        <p>Pilihan Anda Adalah : {{pilih}}</p> -->
+
+        <h3>Pilih Hobi</h3>
+        <input type="checkbox" v-model="ceklis" value="Futsal">
+        <label for="">Futsal</label>
+        <input type="checkbox" v-model="ceklis" value="Badminton">
+        <label for="">Badminton</label>
+        <input type="checkbox" v-model="ceklis" value="Basket">
+        <label for="">Basket</label>
+        <p>Hobi Anda Adalah</p>
+        <li v-for="i in ceklis">{{i}}</li>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: "#apps",
+            data: {
+                // pilih: ''
+                ceklis: []
+            }
+        })
+    </script>
+</body>
+
+</html>

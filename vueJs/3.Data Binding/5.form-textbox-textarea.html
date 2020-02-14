@@ -8,13 +8,18 @@
 </head>
 
 <body>
-    <div id="apps"></div>
+    <div id="apps">
+        <!-- <input type="text" v-model="pesan" placeholder="ketik disini"> -->
+        <textarea v-model="pesan" cols="30" rows="10"></textarea>
+        <p>Pesan Anda Adalah</p>
+        <p style="white-space: pre-line">{{pesan}}</p>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
     <script>
         let app = new Vue({
             el: "#apps",
             data: {
-
+                pesan: ''
             }
         })
     </script>
