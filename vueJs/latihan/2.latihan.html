@@ -1,35 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan</title>
+    <title>Latihan 2</title>
 </head>
 
 <body>
     <div id="apps">
-        The Progressive <br>
-        JavaScript Fremwork
-
-        <li v-for="i in ceklis">{{i}}</li>
-        <button @click="tombol(1)">Prev</button> {{nomer}} of 5 <button @click="tombol(2)">Next</button>
+        <input type='number' value='currentnumber' v-model='currentnumber'>
+        <button @click="buttonlistener('buttonadd')">Add</button>
+        <p>Data : {{ maindata.toString() }}</p>
+        <p>Odd : {{odddata.toString() }}</p>
+        <p>Even : {{evendata.toString() }}</p>
+        <button @click="buttonlistener('buttonsearch')">Search</button>
+        <button @click="buttonlistener('buttonclear')">Clear</button>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-        let app = new Vue({
+        var app = new Vue({
             el: "#apps",
             data: {
-                data: '',
-                ceklis: [1]
+                maindata: [2, 4, 5, 6, 8, 9],
+                odddata: [],
+                evendata: [],
+                currentnumber: 1
             },
             methods: {
-                tombol: function (value) {
+                buttonlistener(buttonID) {
+                    if (buttonID == 'buttonadd') {
+                        this.maindata.push(this.currentnumber);
+                    } else if (buttonID == 'buttonsearch') {
+                        this.odddata = []
+                        this.evendata = []
+
+                        for (var i = 0; i < this.maindata.length; i++) {
+                            if (this.maindata[i] % 2) {
+                                this.evendata.push(this.maindata[i])
+                            } else {
+                                this.odddata.push(this.maindata[i])
+                            }
+                        }
+                    } else {
+                        this.odddata = []
+                        this.evendata = []
+                    }
+                },
+                setcurrentnumbermethod() {
 
                 }
+            },
+            watcher: {
+                currentnumber: 'setcurrentnumbermethod'
             }
-        })
+        });
     </script>
+
 </body>
 
 </html>

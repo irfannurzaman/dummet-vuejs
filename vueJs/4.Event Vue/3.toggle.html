@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle</title>
+</head>
+
+<body>
+    <div id='apps'>
+        <button @click='show=!show'>Toggle</button>
+        <h1 v-show="show">Contoh toggle pada vue</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: "#apps",
+            data: {
+                show: false
+            }
+        })
+    </script>
+</body>
+
+</html>

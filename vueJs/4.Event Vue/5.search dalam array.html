@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search dalam array</title>
+</head>
+
+<body>
+    <div id='apps'>
+        <input type="text" v-model='cari' placeholder="Cari berdasarkan merk">
+        <ul v-for="knd in filter">
+            <li>Jenis: {{knd.jenis}}, Merk: {{knd.merk}}</li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: "#apps",
+            data: {
+                cari: '',
+                kendaraan: [{
+                        jenis: 'mobil',
+                        merk: 'sasa',
+                    },
+                    {
+                        jenis: 'motor',
+                        merk: 'nesa',
+                    },
+                    {
+                        jenis: 'sepeda',
+                        merk: 'bmx',
+                    }
+                ]
+            },
+            computed: {
+                filter: function () {
+                    return this.kendaraan.filter((knd) => {
+                        return knd.merk.match(this.cari)
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

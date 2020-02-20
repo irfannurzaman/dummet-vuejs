@@ -1,0 +1,50 @@
+Latihan 3:
+
+<!DOCTYPE html>
+<html Lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan 3</title>
+</head>
+
+<body>
+    <div id="apps">
+        <h2>Nama-nama elect:</h2>
+        <ul>
+            <li>{{elect[x]}}</li>
+        </ul>
+        <button @click="pos('-')">
+        </button> {{x + 1}} dari {{elect.length}} <button @click="pos('+')">
+        </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#apps",
+            data: {
+                elect: ["asus", "laptop", "tv", "radio", 'hp'],
+                x: 0
+            },
+            methods: {
+                pos: function (param) {
+                    if (param == "-") {
+                        if (this.x < 1) {
+                            this.x = this.elect.length - 1;
+                        } else {
+                            this.x--;
+                        }
+                    } else {
+                        if (this.x > 3) {
+                            this.x = 0;
+                        } else {
+                            this.x++;
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

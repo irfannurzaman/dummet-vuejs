@@ -10,6 +10,7 @@
 <body>
     <div id="apps">
         <h3>Hasil dari perhitungan bilangan {{a}} dan {{b}}</h3>
+        <button v-on:click='diproses'>Proses</button> <br>
         Penjumlahan : {{jumlah}} <br>
         kurang : {{kurang}} <br>
         kali : {{kali}} <br>
@@ -21,21 +22,20 @@
             el: "#apps",
             data: {
                 a: 3,
-                b: 5
+                b: 5,
+                jumlah: 0,
+                kurang: 0,
+                kali: 0,
+                bagi: 0
+
             },
-            computed: {
-                jumlah: function () {
-                    return this.a + this.b
-                },
-                kurang: function () {
-                    return this.a - this.b
-                },
-                kali: function () {
-                    return this.a * this.b
-                },
-                bagi: function () {
-                    return this.a / this.b
-                },
+            methods: {
+                diproses() {
+                    this.jumlah = this.a + this.b,
+                        this.kurang = this.a - this.b,
+                        this.kali = this.a * this.b,
+                        this.bagi = this.a / this.b
+                }
             }
         })
     </script>
