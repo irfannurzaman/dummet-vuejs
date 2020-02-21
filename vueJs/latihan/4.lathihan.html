@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+
+  <body>
+    <div id="apps">
+      <h1>Vue.js</h1>
+      <p :class="{className : class2}">The progresiv js</p>
+      <button @click='click("bold")'>Bold</button>
+      <button @click='click("italic")'>Italic</button>
+      <button @click='click("underline")'>Underline</button>
+      <button @click="click()">Background</button>
+      <button @click="click()">UpperCase</button>
+      <button @click="click()">Size</button>
+    </div>
+    irfazzalx
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: "#apps",
+        data: {
+          class2: false,
+          className: []
+        },
+        methods: {
+          click(params) {
+            this.class2 = !this.class2;
+            this.className.push(params);
+          }
+        }
+      });
+    </script>
+  </body>
+
+  <style>
+    .italic {
+      font-style: italic;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+  </style>
+</html>

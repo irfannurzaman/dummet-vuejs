@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>PR</title>
+</head>
+
+<body>
+    <div id="apps">
+
+        <input v-if="!status" type="text" v-model="cari" placeholder="Hero">
+        <ul v-if="!status" v-for="knd in filterheroes">
+            <li @click="pesan(knd, 'itemklik')">ID: {{knd.id}}, Heroes: {{knd.name}} </li>
+        </ul>
+        <h1 v-if="status">{{temp.id}} Heroes: {{temp.name}}</h1>
+        <button v-if="status" @click="pesan('itemback')">back</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#apps",
+            data: {
+                // title: 'PR ANDITO',
+                heroes: [{
+                        id: 1,
+                        name: 'Windstorm'
+                    },
+                    {
+                        id: 13,
+                        name: 'Bombasto'
+                    },
+                    {
+                        id: 15,
+                        name: 'Magneta'
+                    },
+                    {
+                        id: 20,
+                        name: ' Tornado'
+                    }
+                ],
+                cari: '',
+                status: false,
+                temp: {}
+
+
+            },
+            methods: {
+                pesan(e, buttonid) {
+                    console.log(e);
+                    // alert(e.name)
+                    if (buttonid == "itemklik") {
+                        this.temp = e
+                        return this.status = true
+                    } else {
+                        return this.status = false
+
+                    }
+                },
+
+            },
+            computed: {
+                filterheroes() {
+                    return this.heroes.filter((knd) => {
+                        return knd.name.toLowerCase().match(this.cari.toLowerCase())
+
+                    });
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
